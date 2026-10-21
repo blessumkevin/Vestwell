@@ -1,4 +1,4 @@
-public class MySimpleClass {
+public with sharing class MySimpleClass {
     public static String getGreeting(Boolean isMorning) {
         if (isMorning) {
             return 'Good morning';
@@ -7,16 +7,13 @@ public class MySimpleClass {
         }
     }
 
-    public static void logInsecurely(String username, String password) {
-        // PMD Violation: Hardcoded credentials
-        String hardcodedUser = 'admin';
-        String hardcodedPass = 'password123';
-
-        // PMD Violation: Logging sensitive info
-        System.debug('Logging in with: ' + username + ' / ' + password);
-
-        // PMD Violation: Dynamic SOQL (potential injection risk)
-        String query = 'SELECT Id FROM User WHERE Username = \'' + username + '\'';
-        List<User> users = Database.query(query);
+    public static List<User> findUsersByUsername(String username) {
+        // Check CRUD access
+        if (Schema.sObjectType.User.isAccessible() && Schema.sObjectType.User.fields.Username.isAccessible()) {
+            return [SELECT Id FROM User WHERE Username = :username];
+        } else {
+            // If not accessible, return an empty list or handle as appropriate
+            return new List<User>();
+        }
     }
 }
