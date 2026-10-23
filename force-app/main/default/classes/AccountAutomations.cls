@@ -28,9 +28,9 @@ public class AccountAutomations {
      * @return The updated Account record.
      */
     public static Account setDefaultBillingAddress(Account a) {
-        a.BillingStreet = '456 W Madison St'; 
-        a.BillingState = 'IL'; 
-        a.BillingPostalCode = '60661'; 
+        a.BillingStreet = '123 Main St'; 
+        a.BillingState = 'CA'; 
+        a.BillingPostalCode = '90210'; 
         a.BillingCountry = 'USA';
         return a;
     }
@@ -43,9 +43,9 @@ public class AccountAutomations {
      * @return The updated Account record.
      */
     public static Account setDefaultShippingAddress(Account a) {
-        a.ShippingStreet = '456 W Madison St'; 
-        a.ShippingState = 'IL';
-        a.ShippingPostalCode = '60661';
+        a.ShippingStreet = '123 Main St'; 
+        a.ShippingState = 'CA';
+        a.ShippingPostalCode = '90210';
         a.ShippingCountry = 'USA';
         return a;
     }
@@ -58,7 +58,7 @@ public class AccountAutomations {
      * @return The updated Account record.
      */
     public static Account setDefaultPhone(Account a) {
-        a.Phone = '9257868477';
+        a.Phone = '4152133193';
         return a;
     }
     
