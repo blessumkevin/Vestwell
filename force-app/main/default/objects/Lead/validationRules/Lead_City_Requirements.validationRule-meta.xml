@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_City_Requirements</fullName>
+    <active>false</active>
+    <errorConditionFormula>City &lt;&gt; &quot;Tulsa&quot;</errorConditionFormula>
+    <errorMessage>The Lead City cannot equal Tulsa.</errorMessage>
+</ValidationRule>
